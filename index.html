@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허예슬 포트폴리오</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        /* CSS reset and variables */
+        :root {
+            --bg-color: #ffffff;
+            --text-primary: #111111;
+            --text-secondary: #555555;
+            --border-color: #eeeeee;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            scroll-margin-top: 60px;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Background Blobs */
+        .bg-blob-1, .bg-blob-2 {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .bg-blob-1 {
+            top: -10%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            max-width: 600px;
+            max-height: 600px;
+            background: radial-gradient(circle, rgba(218, 232, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        .bg-blob-2 {
+            bottom: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            max-width: 500px;
+            max-height: 500px;
+            background: radial-gradient(circle, rgba(220, 240, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+
+        /* GNB */
+        .gnb {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 50;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .gnb-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .gnb-logo a {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            text-transform: none;
+        }
+        
+        .gnb-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .gnb-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .gnb-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Header / Intro */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+            word-break: keep-all;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        
+        .hero .intro-text {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            word-break: keep-all;
+        }
+        
+        .hero .intro-text strong {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+            }
+        }
+        
+        .section-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 32px;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+        
+        .info-list li {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+        
+        @media (min-width: 576px) {
+            .info-list li {
+                flex-direction: row;
+            }
+        }
+        
+        .info-list .label {
+            width: 100px;
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+        
+        .info-list .value {
+            font-weight: 500;
+            word-break: keep-all;
+        }
+        
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 16px;
+            word-break: keep-all;
+        }
+        
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-primary);
+            border-radius: 50%;
+        }
+
+        /* Strengths */
+        .strength-item {
+            margin-bottom: 32px;
+        }
+        
+        .strength-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        
+        .strength-item p {
+            color: var(--text-secondary);
+            word-break: keep-all;
+        }
+
+        /* Skills & Tags */
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .skills-list li {
+            position: relative;
+            padding-left: 20px;
+            word-break: keep-all;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+        
+        .skills-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-primary);
+            border-radius: 50%;
+        }
+
+        /* Projects (Notion Style) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        
+        @media (min-width: 640px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 900px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .project-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+        
+        .project-image {
+            aspect-ratio: 4/3;
+            background-color: #f9f9f9;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-info h3 {
+            font-size: 1.125rem;
+            margin-bottom: 4px;
+        }
+        
+        .project-info p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .project-arrow {
+            margin-top: 24px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s ease;
+        }
+        
+        .project-card:hover .project-arrow {
+            gap: 12px;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.95) translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.1);
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+        
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title h3 {
+            font-size: 1.25rem;
+        }
+        
+        .modal-title p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .modal-close:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .modal-body {
+            padding: 0;
+            overflow-y: auto;
+            flex-grow: 1;
+            background-color: #ffffff;
+        }
+        
+        .modal-intro {
+            padding: 32px 32px 16px 32px;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+        
+        .placeholder-image {
+            width: 100%;
+            min-height: 60vh;
+            background-color: #fff;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .placeholder-image svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            color: #ccc;
+        }
+        
+        .actual-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blob-1"></div>
+    <div class="bg-blob-2"></div>
+
+    <nav class="gnb">
+        <div class="gnb-container">
+            <div class="gnb-logo">
+                <a href="#intro">Yeseul.</a>
+            </div>
+            <div class="gnb-links">
+                <a href="#intro">Intro</a>
+                <a href="#profile">Profile</a>
+                <a href="#projects">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header / Intro -->
+        <section class="hero" id="intro">
+            <h1>의미없는 화려함보단 <span style="color: #3782F9;">실용적이고 근거있는</span><br><span style="color: #3782F9;">깔끔한 디자인</span>을 추구하는 디자이너 허예슬입니다.</h1>
+            <div class="intro-text">
+                <p>저는 사용자가 편리하게 느끼는 경험을 직관적인 디자인으로 풀어내는 과정에 큰 흥미를 가지고 있습니다.</p>
+                <p>UX/UI 디자인은 단순히 보이는 결과물이 아니라, 사용자가 문제없이 서비스를 이용하고 긍정적인 경험을 얻도록 만드는 과정이라 생각합니다.</p>
+                <p>다양한 프로젝트 경험을 통해 문제를 발견하고 해결하는 과정을 즐기며, 팀 속에서 아이디어를 구체화하는 역할을 맡아왔습니다. 디자이너로서의 역할을 넘어, 기획자와 개발자 등 다양한 팀원들과의 원활한 소통을 통해 프로젝트의 완성도를 높이는 데 기여하고자 합니다.</p>
+            </div>
+        </section>
+
+        <!-- Profile & Experience -->
+        <div class="grid-2">
+            <section id="profile">
+                <h2 class="section-title">Profile</h2>
+                <ul class="info-list">
+                    <li>
+                        <span class="label">이름</span>
+                        <span class="value">허예슬 (Heo Yeseul)</span>
+                    </li>
+                    <li>
+                        <span class="label">출생</span>
+                        <span class="value">2004. 04. 02</span>
+                    </li>
+                    <li>
+                        <span class="label">이메일</span>
+                        <span class="value">skyshm@sookmyung.ac.kr</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="experience">
+                <h2 class="section-title">Experience</h2>
+                <ul class="bullet-list">
+                    <li>숙명여자대학교 시각영상디자인과 24학번 재학</li>
+                    <li>IT 연합동아리 University Makeus Challenge (UMC) 9기 수료 및 10기 숙명여대 디자인 파트장</li>
+                    <li>팀 '내폼리폼' UMC 9기 최우수상 수상</li>
+                    <li>시각영상디자인과 LUXE 학회 부원</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Strengths & Skills -->
+        <div class="grid-2">
+            <section id="strengths">
+                <h2 class="section-title">Strengths</h2>
+                <div class="strength-item">
+                    <h3>철저한 계획과 준수</h3>
+                    <p>마감 기한과 스케줄을 완벽하게 관리합니다.</p>
+                </div>
+                <div class="strength-item">
+                    <h3>원활한 소통</h3>
+                    <p>빠른 피드백과 협업 능력을 갖추고 있습니다.</p>
+                </div>
+                <div class="strength-item">
+                    <h3>1px의 디테일</h3>
+                    <p>작은 차이가 만드는 높은 퀄리티를 지향합니다.</p>
+                </div>
+                <div class="strength-item">
+                    <h3>논리적 디자인</h3>
+                    <p>감각에만 의존하지 않고 근거 있는 디자인을 제시합니다.</p>
+                </div>
+            </section>
+
+            <div>
+                <section id="skills" style="padding-bottom: 40px;">
+                    <h2 class="section-title">Skills</h2>
+                    <ul class="skills-list">
+                        <li>Figma</li>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Adobe InDesign</li>
+                        <li>Adobe AfterEffects</li>
+                    </ul>
+                </section>
+
+                <section id="interests" style="padding-top: 40px;">
+                    <h2 class="section-title">Interests</h2>
+                    <ul class="info-list">
+                        <li>
+                            <span class="label">Design</span>
+                            <span class="value">UX/UI, 앱 서비스 제작, 디지털 화면 디자인</span>
+                        </li>
+                        <li>
+                            <span class="label">Life</span>
+                            <span class="value">꽃 감상, 사진 촬영, 유아 교육</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" onclick="openModal('내폼리폼')">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/project1/800/600" alt="내폼리폼" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>내폼리폼</h3>
+                        <p>웹 서비스 디자인</p>
+                        <div class="project-arrow">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" onclick="openModal('편한 가계부')">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/seed/project2/800/600" alt="편한 가계부" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>편한 가계부</h3>
+                        <p>앱 리디자인</p>
+                        <div class="project-arrow">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" onclick="openModal('숙행길')">
+                    <div class="project-image">
+                        <img src="1.png" alt="숙행길" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>숙행길</h3>
+                        <p>대시보드 디자인</p>
+                        <div class="project-arrow">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Heo Yeseul. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="projectModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h3 id="modalTitle">프로젝트 제목</h3>
+                    <p id="modalType">프로젝트 타입</p>
+                </div>
+                <button class="modal-close" onclick="closeModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalType = document.getElementById('modalType');
+        const modalBody = document.getElementById('modalBody');
+
+        const projectData = {
+            '내폼리폼': {
+                type: '웹 서비스 디자인',
+                intro: '내폼리폼 프로젝트입니다.',
+                images: ['https://picsum.photos/seed/detail1/1200/1600']
+            },
+            '편한 가계부': {
+                type: '앱 리디자인',
+                intro: '편한 가계부 앱 리디자인 프로젝트입니다.',
+                images: ['https://picsum.photos/seed/detail2/1200/1600']
+            },
+            '숙행길': {
+                type: '대시보드 디자인',
+                intro: '숙명여대 학생들을 위한 통합 대시보드 서비스, 숙행길 프로젝트입니다. 사용자 중심의 직관적인 인터페이스와 편의성을 고려하여 디자인했습니다.',
+                images: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png']
+            }
+        };
+
+        function openModal(title) {
+            const data = projectData[title] || { type: '', intro: '', images: [] };
+            modalTitle.textContent = title;
+            modalType.textContent = data.type;
+            
+            modalBody.innerHTML = '';
+            
+            if (data.intro) {
+                const introEl = document.createElement('div');
+                introEl.className = 'modal-intro';
+                introEl.innerHTML = `<p>${data.intro}</p>`;
+                modalBody.appendChild(introEl);
+            }
+            
+            data.images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'actual-image';
+                img.alt = `${title} 상세 이미지`;
+                img.loading = 'lazy';
+                modalBody.appendChild(img);
+            });
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(event) {
+            // If event is provided, check if the click was on the overlay itself
+            if (event && event.target !== modal) return;
+            
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
