@@ -619,7 +619,7 @@
                 <!-- Project 1 -->
                 <div class="project-card" onclick="openModal('내폼리폼')">
                     <div class="project-image">
-                        <img src="https://github.com/xamxam33/-/raw/018dee96ab9550f6036cc983cf9a911bfc8810d8/30.png" alt="내폼리폼" loading="lazy">
+                        <img src="https://github.com/xamxam33/-/raw/018dee96ab9550f6036cc983cf9a911bfc8810d8/30.png" alt="내폼리폼" loading="lazy" decoding="async" fetchpriority="high">
                     </div>
                     <div class="project-info">
                         <h3>내폼리폼</h3>
@@ -634,7 +634,7 @@
                 <!-- Project 2 -->
                 <div class="project-card" onclick="openModal('편한 가계부')">
                     <div class="project-image">
-                        <img src="https://github.com/xamxam33/-/raw/521530e1e0fd528847ae5ef781bf178c55b58079/20.png" alt="편한 가계부" loading="lazy">
+                        <img src="https://github.com/xamxam33/-/raw/521530e1e0fd528847ae5ef781bf178c55b58079/20.png" alt="편한 가계부" loading="lazy" decoding="async">
                     </div>
                     <div class="project-info">
                         <h3>편한 가계부</h3>
@@ -649,7 +649,7 @@
                 <!-- Project 3 -->
                 <div class="project-card" onclick="openModal('숙행길')">
                     <div class="project-image">
-                        <img src="https://github.com/xamxam33/-/raw/b29396901efedff4da16fbce31f41083bf6619d2/1.png" alt="숙행길" loading="lazy">
+                        <img src="https://github.com/xamxam33/-/raw/b29396901efedff4da16fbce31f41083bf6619d2/1.png" alt="숙행길" loading="lazy" decoding="async">
                     </div>
                     <div class="project-info">
                         <h3>숙행길</h3>
@@ -779,6 +779,7 @@
                 img.className = 'actual-image';
                 img.alt = `${title} 상세 이미지`;
                 img.loading = 'lazy';
+                img.decoding = 'async';
                 modalBody.appendChild(img);
             });
             
