@@ -529,7 +529,7 @@
         .ux-grid-3 {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 40px;
             margin-bottom: 60px;
         }
         .ux-card {
@@ -558,7 +558,7 @@
             position: relative;
             padding-left: 16px;
             margin-bottom: 12px;
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: #444444;
             word-break: keep-all;
         }
@@ -586,13 +586,10 @@
             transform: scale(1.05);
         }
         .ux-env-text {
-            font-size: 0.875rem;
-            color: #555555;
-            background-color: #ffffff;
-            padding: 16px;
-            border-radius: 12px;
-            border: 1px solid #eeeeee;
-            margin-top: auto;
+            font-size: 1rem;
+            color: #444444;
+            margin-top: 24px;
+            word-break: keep-all;
         }
         .ux-env-text p {
             margin-bottom: 8px;
@@ -611,106 +608,122 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        .ux-journey-box {
-            background-color: #ffffff;
-            border: 1px solid #eeeeee;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        .ux-journey-horizontal {
             display: flex;
             flex-direction: column;
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #eeeeee;
         }
-        .ux-journey-header {
+        .ux-journey-header-title {
             background: linear-gradient(135deg, #1D4ED8, #60A5FA);
             color: #ffffff;
             padding: 16px 24px;
             font-weight: 700;
             font-size: 1.125rem;
         }
-        .ux-journey-content {
-            padding: 24px;
-            flex-grow: 1;
-        }
-        .ux-journey-step {
-            position: relative;
-            padding-left: 24px;
-            border-left: 2px solid #eeeeee;
-            padding-bottom: 24px;
-        }
-        .ux-journey-step:last-child {
-            border-left-color: transparent;
-            padding-bottom: 0;
-        }
-        .ux-journey-step::before {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 4px;
-            width: 12px;
-            height: 12px;
-            background-color: #1D4ED8;
-            border-radius: 50%;
-            border: 3px solid #ffffff;
-            box-sizing: content-box;
-        }
-        .ux-step-title {
-            font-weight: 700;
-            color: #111111;
-            margin-bottom: 4px;
-        }
-        .ux-step-action {
-            font-size: 0.875rem;
-            color: #555555;
-            margin-bottom: 16px;
-            word-break: keep-all;
-        }
-        .ux-step-details {
-            background-color: #F9F9FB;
-            border-radius: 12px;
-            padding: 16px;
-        }
-        .ux-detail-row {
+        .ux-journey-row {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
         }
-        .ux-detail-row:last-child {
-            margin-bottom: 0;
+        .ux-journey-row:last-child {
+            border-bottom: none;
         }
-        .ux-detail-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #777777;
-            width: 70px;
+        .ux-journey-label {
+            width: 120px;
             flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .ux-detail-value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
             font-size: 0.875rem;
-            color: #333333;
+            color: #0d9488;
+            background-color: #f8fafc;
+            border-right: 1px solid #eee;
+            padding: 16px;
+            text-align: center;
+        }
+        .ux-journey-cells {
+            display: flex;
             flex-grow: 1;
+        }
+        .ux-journey-cell {
+            flex: 1;
+            padding: 16px;
+            font-size: 0.875rem;
+            color: #444;
+            text-align: center;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             word-break: keep-all;
         }
-        .ux-emotion-bar-container {
-            width: 100%;
-            background-color: #e5e7eb;
-            border-radius: 999px;
-            height: 8px;
-            margin-top: 6px;
-            overflow: hidden;
+        .ux-journey-cell:last-child {
+            border-right: none;
         }
-        .ux-emotion-bar {
-            height: 100%;
-            border-radius: 999px;
-            transition: width 0.5s ease;
+        .ux-journey-row.header-row {
+            background-color: #fff;
         }
-        .ux-emotion-high { background-color: #10b981; width: 100%; }
-        .ux-emotion-mid { background-color: #f59e0b; width: 66%; }
-        .ux-emotion-low { background-color: #f43f5e; width: 33%; }
-        .ux-emotion-icon {
-            display: inline-flex;
+        .ux-journey-row.header-row .ux-journey-label {
+            background-color: #fff;
+            border-right: none;
+        }
+        .ux-journey-row.header-row .ux-journey-cells {
+            gap: 4px;
+            padding: 12px 16px 12px 0;
+        }
+        .ux-journey-header-cell {
+            flex: 1;
+            background-color: #14b8a6;
+            color: white;
+            font-weight: 700;
+            display: flex;
             align-items: center;
-            margin-right: 8px;
+            justify-content: center;
+            padding: 12px;
+            position: relative;
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+            font-size: 0.875rem;
+        }
+        .ux-journey-header-cell:first-child {
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+        }
+        .ux-journey-header-cell:last-child {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 10% 50%);
+        }
+        .ux-journey-header-cell:nth-child(1) { background-color: #99f6e4; color: #115e59; }
+        .ux-journey-header-cell:nth-child(2) { background-color: #5eead4; color: #115e59; }
+        .ux-journey-header-cell:nth-child(3) { background-color: #2dd4bf; color: #fff; }
+        .ux-journey-header-cell:nth-child(4) { background-color: #14b8a6; color: #fff; }
+        .ux-journey-header-cell:nth-child(5) { background-color: #0d9488; color: #fff; }
+        
+        .ux-journey-row.emotion-row .ux-journey-cells {
+            position: relative;
+        }
+        .ux-emotion-line {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background-color: #5eead4;
+            z-index: 0;
+        }
+        .ux-journey-row.emotion-row .ux-journey-cell {
+            position: relative;
+            z-index: 1;
+        }
+        .ux-emotion-icon {
+            font-size: 1.5rem;
+            background: #fff;
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .ux-painpoints-list {
             list-style: none;
@@ -732,7 +745,7 @@
             font-weight: bold;
         }
         .ux-painpoints-list p {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: #333333;
             word-break: keep-all;
         }
@@ -749,7 +762,7 @@
             margin: 0;
         }
         .ux-blockquote p {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: #1e3a8a;
             line-height: 1.6;
             font-weight: 500;
@@ -788,7 +801,7 @@
             margin-bottom: 12px;
         }
         .ux-service-desc {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: #555555;
             margin-bottom: 24px;
             word-break: keep-all;
@@ -800,7 +813,7 @@
             border: 1px solid #eeeeee;
         }
         .ux-service-features h4 {
-            font-size: 0.875rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #111111;
             margin-bottom: 12px;
@@ -814,7 +827,7 @@
             position: relative;
             padding-left: 16px;
             margin-bottom: 8px;
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: #444444;
             word-break: keep-all;
         }
@@ -1059,7 +1072,7 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
                             Environments (환경)
                         </div>
-                        <p style="font-size: 0.875rem; color: #444; margin-bottom: 16px; word-break: keep-all;">
+                        <p style="font-size: 1rem; color: #444; margin-bottom: 16px; word-break: keep-all;">
                             강동구 보건소 1층은 가족건강증진센터와 건강관리센터로 나뉘어 있으며, 민원 접수대와 검사실, 진료실이 밀집해 동선이 매우 복잡함.
                         </p>
                         <div class="ux-img-container">
@@ -1078,19 +1091,19 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                             Interactions (상호작용)
                         </div>
-                        <p style="font-size: 0.875rem; color: #444; word-break: keep-all;">
+                        <p style="font-size: 1rem; color: #444; word-break: keep-all;">
                             민원인에게 방문 목적을 물어보고 번호표 뽑고 접수할 수 있도록 안내, 동선에 맞춰 진행할 수 있도록 안내. 간호사들끼리는 육성으로 환자 이동 상황을, 전산으로 환자 정보를 공유함.
                         </p>
                     </div>
 
                     <!-- Objects & Users -->
-                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 40px;">
                         <div class="ux-card" style="flex: 1; margin-bottom: 0;">
                             <div class="ux-card-title">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                                 Objects (사물)
                             </div>
-                            <p style="font-size: 0.875rem; color: #444; word-break: keep-all;">
+                            <p style="font-size: 1rem; color: #444; word-break: keep-all;">
                                 수기 예약 명단, 검사 결과지, 인바디 기계, 번호표 등
                             </p>
                         </div>
@@ -1099,7 +1112,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                                 Users (사용자)
                             </div>
-                            <p style="font-size: 0.875rem; color: #444; word-break: keep-all;">
+                            <p style="font-size: 1rem; color: #444; word-break: keep-all;">
                                 업무 반복으로 비즈니스적 시니컬함을 가진 간호사, 저마다의 다양한 목적으로 찾아오는 민원인 (주로 노년층/산모가 대부분임.)
                             </p>
                         </div>
@@ -1113,185 +1126,128 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     Journey Map
                 </h3>
-                <div class="ux-grid-2">
-                    <!-- 건강관리센터 -->
-                    <div class="ux-journey-box">
-                        <div class="ux-journey-header">1. 건강관리센터 져니맵</div>
-                        <div class="ux-journey-content">
-                            <!-- Step 1 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(1) 민원보조</div>
-                                <div class="ux-step-action">오전 인파 대응, 환자 동선 체크 및 접수 안내</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">🥵</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">오전에 사람이 몰려 대기가 밀리고, 환자 본인이 용무를 몰라 안내가 힘듦</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">환자의 실시간 동선을 알고 싶다.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Step 2 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(2) 점심식사</div>
-                                <div class="ux-step-action">간호사들끼리 밥을 먹는다.</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">☺️</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">그닥 없음.</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">그닥 없음.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Step 3 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(3) 신체계측</div>
-                                <div class="ux-step-action">환자가 가져온 경로 메모지 확인 후 인바디/혈압 측정</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">😑</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">예외 상황 발생 시 안내를 잘못하면 민원인이 보건소에 다시 와야함</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">수기 메모지 대신 더 편한 방법이 있었으면 좋겠다.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Step 4 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(4) 결과 상담 및 안내</div>
-                                <div class="ux-step-action">환자 전산 정보를 확인하고 반복 설명한다.</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">🥵</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">환자에게 이해시키기 어렵다.</div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="ux-journey-horizontal">
+                    <div class="ux-journey-header-title">건강관리센터</div>
+                    
+                    <!-- Header Row -->
+                    <div class="ux-journey-row header-row">
+                        <div class="ux-journey-label">JOURNEY</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-header-cell">(1) 민원보조</div>
+                            <div class="ux-journey-header-cell">(2) 점심식사</div>
+                            <div class="ux-journey-header-cell">(3) 신체계측</div>
+                            <div class="ux-journey-header-cell">(4) 결과 상담 및 안내</div>
                         </div>
                     </div>
+                    
+                    <!-- Action Row -->
+                    <div class="ux-journey-row">
+                        <div class="ux-journey-label">ACTION</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-cell">오전 인파 대응, 환자 동선 체크 및 접수 안내</div>
+                            <div class="ux-journey-cell">간호사들끼리 밥을 먹는다.</div>
+                            <div class="ux-journey-cell">환자가 가져온 경로 메모지 확인 후 인바디/혈압 측정</div>
+                            <div class="ux-journey-cell">환자 전산 정보를 확인하고 반복 설명한다.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emotion Row -->
+                    <div class="ux-journey-row emotion-row">
+                        <div class="ux-journey-label">EMOTION</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-emotion-line"></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">🥵</div></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">☺️</div></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">😑</div></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">🥵</div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pain Points Row -->
+                    <div class="ux-journey-row">
+                        <div class="ux-journey-label">PAIN POINTS</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-cell">오전에 사람이 몰려 대기가 밀리고, 환자 본인이 용무를 몰라 안내가 힘듦</div>
+                            <div class="ux-journey-cell">그닥 없음.</div>
+                            <div class="ux-journey-cell">예외 상황 발생 시 안내를 잘못하면 민원인이 보건소에 다시 와야함</div>
+                            <div class="ux-journey-cell">환자에게 이해시키기 어렵다.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Needs Row -->
+                    <div class="ux-journey-row">
+                        <div class="ux-journey-label">NEEDS</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-cell" style="font-weight: 500;">환자의 실시간 동선을 알고 싶다.</div>
+                            <div class="ux-journey-cell" style="font-weight: 500;">그닥 없음.</div>
+                            <div class="ux-journey-cell" style="font-weight: 500;">수기 메모지 대신 더 편한 방법이 있었으면 좋겠다.</div>
+                            <div class="ux-journey-cell" style="font-weight: 500;">전문 지식이 없는 환자를 이해시키기 수월한 방법이 있었으면 좋겠다.</div>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- 가족건강증진센터 -->
-                    <div class="ux-journey-box">
-                        <div class="ux-journey-header">2. 가족건강증진센터 져니맵</div>
-                        <div class="ux-journey-content">
-                            <!-- Step 1 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(1) 민원보조</div>
-                                <div class="ux-step-action">환자 동선 체크 및 접수 안내</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">🥵</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">간호사 간 상호작용의 피로, 사업명이 비슷해 동선 안내하기 헷갈림.</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">사업명 변경 혹은 정확하게 확인할 수 있도록 정보 떴으면 좋겠음.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Step 2 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(2) 예진표 작성</div>
-                                <div class="ux-step-action">예진표 작성 보조 및 주의사항 안내</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">😑</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">매번 똑같은 행동을 반복해야돼서 은근 번거로움.</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">안내문을 배부했으면 좋겠음.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Step 3 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(3) 점심식사</div>
-                                <div class="ux-step-action">간호사들끼리 밥을 먹는다.</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">☺️</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">그닥 없음.</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">그닥 없음.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Step 4 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(4) 업무 반복</div>
-                                <div class="ux-step-action">민원 보조 및 예진표 관련 업무 반복</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">🥵</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">위와 동일</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">위와 동일</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Step 5 -->
-                            <div class="ux-journey-step">
-                                <div class="ux-step-title">(5) 잡무</div>
-                                <div class="ux-step-action">택배 정리나 지원 물품을 포장하여 세팅.</div>
-                                <div class="ux-step-details">
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Emotion</div>
-                                        <div class="ux-detail-value" style="font-size: 1.5rem; line-height: 1;">😑</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Painpoints</div>
-                                        <div class="ux-detail-value">고충은 없으나 신체 피로 누적</div>
-                                    </div>
-                                    <div class="ux-detail-row">
-                                        <div class="ux-detail-label">Needs</div>
-                                        <div class="ux-detail-value" style="font-weight: 500;">딱히 없음.</div>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- 가족건강증진센터 -->
+                <div class="ux-journey-horizontal">
+                    <div class="ux-journey-header-title">가족건강증진센터</div>
+                    
+                    <!-- Header Row -->
+                    <div class="ux-journey-row header-row">
+                        <div class="ux-journey-label">JOURNEY</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-header-cell">(1) 민원보조</div>
+                            <div class="ux-journey-header-cell">(2) 예진표 작성</div>
+                            <div class="ux-journey-header-cell">(3) 점심식사</div>
+                            <div class="ux-journey-header-cell">(4) 업무 반복</div>
+                            <div class="ux-journey-header-cell">(5) 잡무</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Row -->
+                    <div class="ux-journey-row">
+                        <div class="ux-journey-label">ACTION</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-cell">환자 동선 체크 및 접수 안내</div>
+                            <div class="ux-journey-cell">예진표 작성 보조 및 주의사항 안내</div>
+                            <div class="ux-journey-cell">간호사들끼리 밥을 먹는다.</div>
+                            <div class="ux-journey-cell">민원 보조 및 예진표 관련 업무 반복</div>
+                            <div class="ux-journey-cell">택배 정리나 지원 물품을 포장하여 세팅.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emotion Row -->
+                    <div class="ux-journey-row emotion-row">
+                        <div class="ux-journey-label">EMOTION</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-emotion-line"></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">🥵</div></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">😑</div></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">☺️</div></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">🥵</div></div>
+                            <div class="ux-journey-cell"><div class="ux-emotion-icon">😑</div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pain Points Row -->
+                    <div class="ux-journey-row">
+                        <div class="ux-journey-label">PAIN POINTS</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-cell">간호사 간 상호작용의 피로, 사업명이 비슷해 동선 안내하기 헷갈림.</div>
+                            <div class="ux-journey-cell">매번 똑같은 행동을 반복해야돼서 은근 번거로움.</div>
+                            <div class="ux-journey-cell">그닥 없음.</div>
+                            <div class="ux-journey-cell">위와 동일</div>
+                            <div class="ux-journey-cell">고충은 없으나 신체 피로 누적</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Needs Row -->
+                    <div class="ux-journey-row">
+                        <div class="ux-journey-label">NEEDS</div>
+                        <div class="ux-journey-cells">
+                            <div class="ux-journey-cell" style="font-weight: 500;">사업명 변경 혹은 정확하게 확인할 수 있도록 정보 떴으면 좋겠음.</div>
+                            <div class="ux-journey-cell" style="font-weight: 500;">안내문을 배부했으면 좋겠음.</div>
+                            <div class="ux-journey-cell" style="font-weight: 500;">그닥 없음.</div>
+                            <div class="ux-journey-cell" style="font-weight: 500;">위와 동일</div>
+                            <div class="ux-journey-cell" style="font-weight: 500;">딱히 없음.</div>
                         </div>
                     </div>
                 </div>
