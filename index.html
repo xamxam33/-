@@ -351,7 +351,7 @@
         }
         
         .project-arrow {
-            margin-top: 24px;
+            margin-top: auto;
             font-size: 0.875rem;
             font-weight: 600;
             display: flex;
@@ -494,6 +494,52 @@
         .ux-research {
             background-color: #ffffff;
             color: #111111;
+        }
+
+        /* Accordion Styles */
+        .interview-accordion {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .interview-accordion summary {
+            padding: 16px 20px;
+            background-color: #f9f9f9;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+        .interview-accordion summary:hover {
+            background-color: #f0f0f0;
+        }
+        .interview-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+        .interview-accordion summary::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: #666;
+            transition: transform 0.2s;
+        }
+        .interview-accordion[open] summary::after {
+            content: '-';
+        }
+        .interview-accordion .accordion-content {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            line-height: 1.6;
+        }
+        .interview-accordion .accordion-content p {
+            margin-bottom: 12px;
+        }
+        .interview-accordion .accordion-content p:last-child {
+            margin-bottom: 0;
         }
         .ux-header {
             text-align: center;
@@ -904,7 +950,7 @@
                 <h2 class="section-title">Experience</h2>
                 <ul class="bullet-list">
                     <li>숙명여자대학교 시각영상디자인과 24학번 재학</li>
-                    <li>IT 연합동아리 University Makeus Challenge (UMC) 9기 수료 및 10기 숙명여대 디자인 파트장</li>
+                    <li>IT 연합동아리 University Makeus Challenge (UMC) 9기 수료 및 10기 숙명여대 및 인하대 디자인 파트장</li>
                     <li>팀 '내폼리폼' UMC 9기 최우수상 수상</li>
                     <li>시각영상디자인과 LUXE 학회 부원</li>
                 </ul>
@@ -973,7 +1019,6 @@
                     </div>
                     <div class="project-info">
                         <h3>내폼리폼</h3>
-                        <p>웹 서비스 디자인</p>
                         <div class="project-arrow">
                             자세히 보기 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -988,7 +1033,6 @@
                     </div>
                     <div class="project-info">
                         <h3>편한 가계부</h3>
-                        <p>앱 리디자인</p>
                         <div class="project-arrow">
                             자세히 보기 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -1003,7 +1047,6 @@
                     </div>
                     <div class="project-info">
                         <h3>숙행길</h3>
-                        <p>대시보드 디자인</p>
                         <div class="project-arrow">
                             자세히 보기 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -1017,15 +1060,61 @@
         <section id="ux-research" class="projects">
             <h2 class="section-title">UX Research</h2>
             
-            <div class="project-grid" style="grid-template-columns: 1fr;">
+            <div class="projects-grid" style="grid-template-columns: 1fr; gap: 12px;">
                 <div class="project-card" onclick="openModal('UX Research')">
-                    <div class="project-image" style="height: 320px;">
-                        <img src="https://github.com/xamxam33/-/raw/b03e564cead8b77c79b5f434669adef66a078f1f/image%20(2).png" alt="UX Research" loading="lazy" decoding="async" style="object-position: center 20%;">
+                    <div class="project-info" style="padding: 24px 32px; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="color: #2563eb; display: flex; align-items: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                            </div>
+                            <h3 style="font-size: 1.125rem; margin: 0;">[Week 02] 보건소 간호사의 인지적 업무 과부하 해결을 위한 UX 리서치</h3>
+                        </div>
+                        <div class="project-arrow" style="margin-top: 0;">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
                     </div>
-                    <div class="project-info">
-                        <h3>보건소 간호사의 인지적 업무 과부하 해결을 위한 UX 리서치</h3>
-                        <p>디자인 에스노그라피를 통한 현장 중심의 문제 정의</p>
-                        <div class="project-arrow">
+                </div>
+
+                <div class="project-card" onclick="openModal('[Week 03] 보건소 에스노그라피를 위한 답사')">
+                    <div class="project-info" style="padding: 24px 32px; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="color: #2563eb; display: flex; align-items: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            </div>
+                            <h3 style="font-size: 1.125rem; margin: 0;">[Week 03] 보건소 에스노그라피를 위한 답사</h3>
+                        </div>
+                        <div class="project-arrow" style="margin-top: 0;">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('[Week 03] 대형 쇼핑몰 에스노그라피 기록')">
+                    <div class="project-info" style="padding: 24px 32px; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="color: #2563eb; display: flex; align-items: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            </div>
+                            <h3 style="font-size: 1.125rem; margin: 0;">[Week 03] 대형 쇼핑몰 에스노그라피 기록</h3>
+                        </div>
+                        <div class="project-arrow" style="margin-top: 0;">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('[Week 03] 대형 백화점 에스노그라피 기록')">
+                    <div class="project-info" style="padding: 24px 32px; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="color: #2563eb; display: flex; align-items: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            </div>
+                            <h3 style="font-size: 1.125rem; margin: 0;">[Week 03] 대형 백화점 에스노그라피 기록</h3>
+                        </div>
+                        <div class="project-arrow" style="margin-top: 0;">
                             자세히 보기 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </div>
@@ -1040,12 +1129,17 @@
             
             <div class="project-grid" style="grid-template-columns: 1fr;">
                 <div class="project-card" onclick="openModal('Essay')">
-                    <div class="project-info" style="padding: 40px;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 12px;">복잡함은 죄가 없다</h3>
-                        <p style="font-size: 1.1rem; color: var(--text-secondary);">《도널드 노먼의 UX 디자인 특강: 복잡한 세상의 디자인》을 읽고</p>
-                        <div class="project-arrow">
-                            자세히 보기 
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <div class="project-info" style="padding: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 4px;">복잡함은 죄가 없다</h3>
+                            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px;">《도널드 노먼의 UX 디자인 특강: 복잡한 세상의 디자인》을 읽고</p>
+                            <div class="project-arrow">
+                                자세히 보기 
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </div>
+                        </div>
+                        <div style="flex-shrink: 0; margin-left: 32px;">
+                            <img src="https://github.com/xamxam33/-/raw/main/image%205.png" alt="도널드 노먼의 UX 디자인 특강 책 표지" style="width: 120px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                         </div>
                     </div>
                 </div>
@@ -1054,8 +1148,8 @@
 
         <!-- UX Research Template -->
         <template id="ux-research-template">
-            <div class="ux-research" style="padding: 0 40px;">
-                <div class="ux-header">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div class="ux-header" style="margin-bottom: 60px;">
                     <h2>보건소 간호사의 인지적 업무 과부하 해결을 위한 UX 리서치</h2>
                     <p>디자인 에스노그라피를 통한 현장 중심의 문제 정의</p>
                 </div>
@@ -1389,24 +1483,278 @@
             </div>
         </template>
 
+        <!-- Week 03 Template -->
+        <template id="week03-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="margin-bottom: 40px; background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 24px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 16px; color: #2563eb; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        개요
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                        <li><strong style="color: #0f172a;">인원:</strong> 강현민, 이보아, 허예슬</li>
+                        <li><strong style="color: #0f172a;">일시:</strong> 2026.03.18 (수) 13:00 - 18:00</li>
+                        <li><strong style="color: #0f172a;">장소:</strong> 용산구 보건소, 종로구 보건소, 성북구 보건소</li>
+                        <li><strong style="color: #0f172a;">목표:</strong> 용산구 보건소에서 허가를 받고 에스노그라피 관찰 및 인터뷰를 하기 위하여 답사.</li>
+                    </ul>
+                </div>
+                
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        답사 기록
+                    </h4>
+                    <p style="margin-bottom: 16px;">처음에는 용산구 보건소에 허가를 받고 관찰 및 인터뷰를 진행하려고 했음. 사전에 준비한 서류를 건네고 허가 요청을 받았으나 예상보다 오래 걸려서 용산구 보건소 관찰을 포기하고 20일 금요일에 답사 예정이었던 종로구 보건소로 이동함. (*용산구 보건소는 차일 불허를 받음)</p>
+                    <p style="margin-bottom: 16px;">그러나 종로구 보건소에서도 허가를 받지 못해 예정에 없었던 성북구 보건소까지 이동했으나 여기서도 불허 처리됨.</p>
+                    <p>관찰 답사를 돈 3명(강현민, 이보아, 허예슬(본인))이서 현실적인 관찰 어려움을 이유로 주제 변경의 필요성을 느껴 차일(19일 목요일)에 팀원들과 답사 내용을 공유하고 회의를 통해 주제를 변경하였음.</p>
+                </div>
+            </div>
+        </template>
+
+        <!-- Week 03 Mall Template -->
+        <template id="week03-mall-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="margin-bottom: 40px; background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 24px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 16px; color: #2563eb; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        개요
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                        <li><strong style="color: #0f172a;">일시:</strong> 2026.03.20 (금) 13:00-17:00</li>
+                        <li><strong style="color: #0f172a;">장소:</strong> 용산 아이파크몰 및 코엑스</li>
+                        <li><strong style="color: #0f172a;">인원:</strong> 강현민, 이보아, 허예슬(본인)</li>
+                    </ul>
+                </div>
+                
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        관찰 기록 (용산 아이파크몰)
+                    </h4>
+                    <ul style="margin-bottom: 40px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 12px;">입구 바로 앞에 에스컬레이터가 있고, 옆에 길안내가 있어 시선을 돌려야 이동 가능함</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">어떤 중년 남자:</strong> 벽 층별안내를 보다가 스크린을 조작해보다가 별로 이해하지 못하는 모습을 보여줌. 옆쪽 엘리베이터를 흘깃 보더니 그대로 다시 나감</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">외국인 남자:</strong> 벽 층별안내 및 스크린을 5초 정도 보다가 별다른 상호작용 없이 이동함. 다만 이해하지 못하는 듯 주변을 두리번 거리다가 사람들이 몰려다니는 곳 따라서 이동함</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">30대 남자:</strong> 층별 안내를 1분정도 쳐다보가가 핸드폰을 킴, 스크린</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">50대 여성:</strong> 층별 안내를 1분정도 쳐다보다가 떠남</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">20대 남성:</strong> 층별 안내를 30초정도 쳐다보다가 떠남</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">중년 부부:</strong> 30초정도 쳐다보다가 스크린을 조작하면서 어디지? 하면서 이야기 나눔 4층이다 하면서 목적지를 확보한 듯 떠남</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">20대 여성:</strong> 스크린 조작에 어려움을 보임 (스크롤 제스처를 해도 작동하지 않고 터치 불가능한 영역을 터치해 답답함 듯 여러번 터치함) 그러다 포기하고 뒤로 물러서다가 잠시 쳐다보고 떠남 (확실하게 목적지를 찾지 못한 듯 보임)</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">나:</strong> 스크린 조작하다가 안돼서 기억에 의존해 길을 찾았다. 층별 안내를 못 봐서 층수를 착각하고 길을 더 헤맸다. (일부 에스컬레이터에는 층수 안내가 안 되어있음 - 빔프로젝터?처럼 쏘는 건데 망가져서 꺼진듯). 그런데 바닥에 안내가 되어 있어 상향 에스컬레이터에서는 시선이 위를 향하니 못 알아차리게 됨</li>
+                    </ul>
+
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        인터뷰 기록
+                    </h4>
+                    <div class="accordion-container" style="margin-bottom: 40px;">
+                        
+                        <details class="interview-accordion">
+                            <summary>70대 여성 - 용산 아이파크몰</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오셨나요?</strong><br>A. 종종 남편이랑 같이 오셨다가 혼자서 처음 오셨음</p>
+                                <p><strong>Q. 종이지도는 사용하세요?</strong><br>A. 종이는 작아가지고 볼줄 모름. 지리 못 했음</p>
+                                <p><strong>Q. 안내스크린 사용에 어려움이 있나요?</strong><br>A. 스크린을 모름. 지도 보는 것도 모름</p>
+                                <p><strong>Q. 그럼 길을 헤맬 때 어떻게 하세요?</strong><br>A. 붙잡고 물어볼 직원이 없어 > 전화해야함</p>
+                                <p><strong>Q. 길을 찾는 데 불편하신 점이 있나요?</strong><br>A. 스크린 어렵고 층도 잘 알기 쉽지 않고 안내하는 사람도 없고 데스크도 없고</p>
+                            </div>
+                        </details>
+
+                        <details class="interview-accordion">
+                            <summary>2-30대 여성, 남성분 (답변은 남성분 위주) - 용산 아이파크몰</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오셨나요?</strong><br>A. 두번째 방문임</p>
+                                <p><strong>Q. 길을 헤맨 적이 있나요?</strong><br>A. 길을 헤맸던 적은 딱히 없는 것 같다</p>
+                                <p><strong>Q. 길을 찾을 때 어떤 방법으로 찾으시나요? 어려움은 있나요?</strong><br>A. 스크린 층별 안내도만 사용, 이해하는 데 큰 어려움은 없음</p>
+                                <p><strong>Q. 텍스트/아이콘 등 어떤 표기를 제일 많이 보시나요?</strong><br>A. 목적을 가지고 오는 게 아니라 일단 와서 어딜 돌아다닐지 찾는 편이라서 텍스트 위주로 봤던 것 같다</p>
+                            </div>
+                        </details>
+
+                        <details class="interview-accordion">
+                            <summary>50대 남성 - 용산 아이파크몰</summary>
+                            <div class="accordion-content">
+                                <p style="color: #666; font-style: italic; margin-bottom: 16px;">(인터뷰 전에 뒤에서 스크린 조작하는 거 관찰 - 터치를 좀 여러번 누르시거나 빤히 쳐다봄)</p>
+                                <p><strong>Q. 자주 오셨나요?</strong><br>A. 몇 번 오긴 했었다</p>
+                                <p><strong>Q. 스크린, 층별안내도 등 어떤 방법을 사용하여 길을 찾으시나요?</strong><br>A. 스크린 보긴 하는데 좀 어려워서 층별 안내를 보기도 하는데 그냥 돌아다니면서 찾거나 물어본다</p>
+                                <p><strong>Q. 길 찾는 데 불편하신 점이 있었나요?</strong><br>A. 건물이 복잡해서 처음에 올 땐 어려웠던 것 같다.</p>
+                            </div>
+                        </details>
+
+                        <details class="interview-accordion">
+                            <summary>40대 남성 - 용산 아이파크몰</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오시나요?</strong><br>A. 자주온다</p>
+                                <p><strong>Q. 길을 헤맸던 적이 있었나요?</strong><br>A. 없었다</p>
+                                <p><strong>Q. 길을 찾을 때 어떤 방법으로 찾으시나요?</strong><br>A. 실내에서 길을 찾을 때 스크린이나 층별 안내 등 사용하지 않고 직접 돌아다니면서 찾는다 (자주 오셔서 구조를 대충 아시는 거 같음)</p>
+                                <p><strong>Q. 그럼 돌아다니면서 길 찾는 데 어려움은 없나요?</strong><br>A. 어려움이 없다</p>
+                            </div>
+                        </details>
+
+                        <details class="interview-accordion">
+                            <summary>20대 대학생 여성 외국인 - 코엑스</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오시나요?</strong><br>A. 처음으로 왔다</p>
+                                <p><strong>Q. 길을 헤맨 경험이 있나요?</strong><br>A. 처음으로 왔는데 길을 헤매진 않았다</p>
+                                <p><strong>Q. 지도 앱은 어떤 걸 사용하시나요?</strong><br>A. 네이버맵을 사용한다</p>
+                                <p><strong>Q. 네이버맵의 불편함이 있나요?</strong><br>A. 딱히 큰 불편함은 없음</p>
+                                <p><strong>Q. 코엑스에서 길을 어떻게 찾으셨나요?</strong><br>A. 코엑스에 파란색 길을 따라간다</p>
+                                <p><strong>Q. 안내판을 이해하는 데 어려운 점이 있나요? 자주 사용하시나요?</strong><br>A. 안내판의 어려운 점은 없고 텍스트/아이콘/화살표 중 방향 화살표를 가장 많이 확인한다</p>
+                            </div>
+                        </details>
+
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Week 03 Dept Store Template -->
+        <template id="week03-dept-store-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="margin-bottom: 40px; background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 24px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 16px; color: #2563eb; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        개요
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                        <li><strong style="color: #0f172a;">일시:</strong> 2026.03.23 (월) 14:00-17:00</li>
+                        <li><strong style="color: #0f172a;">장소:</strong> 강남 신세계백화점 및 명동 롯데백화점 본점</li>
+                        <li><strong style="color: #0f172a;">인원:</strong> 김서윤, 유소원, 허예슬(본인)</li>
+                    </ul>
+                </div>
+                
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        관찰 기록 (롯데백화점)
+                    </h4>
+                    <ul style="margin-bottom: 40px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 12px;">층별안내, 안내데스크, 천장/표지판 화살표 기호 있음 애비뉴엘, 본관 건물 따로. 보안요원도 있음. 안내스크린 양면도 있음</li>
+                        <li style="margin-bottom: 12px;">안내스크린이 좀 느린다 터치가 한박자 늦어서 여러번 터치하다가 오류 난다</li>
+                        <li style="margin-bottom: 12px;">안내스크린이 잘 눈에 안 띄어서 찾기 힘들다 (나도 몇번 지나치고, 계속 돌아다녔던 곳인데 있는지도 몰랐음)</li>
+                        <li style="margin-bottom: 12px;">외국인 한국인 커플 영어로 안내스크린 사용하다가 나감</li>
+                        <li style="margin-bottom: 12px;">어디지 하면서 돌아다니면서 찾음 두리번두리번거리는 사람들이 많은듯</li>
+                        <li style="margin-bottom: 12px;">매장 직원한테 어디냐고 물어보는 중년 남성</li>
+                        <li style="margin-bottom: 12px;">층별 안내 지도 휘적이면서 찾음 ->터치 해서 길안내</li>
+                        <li style="margin-bottom: 12px;">어린 아이는 이것저것 안내스크린 눌러보고있다</li>
+                        <li style="margin-bottom: 12px;">일본인 모녀: 손짓하면서 저쪽으로 가자고 하는데 거기에 있을까나 라고 하면서 움직임</li>
+                        <li style="margin-bottom: 12px;">두리번 거리면서 찾는 사람들 다수</li>
+                        <li style="margin-bottom: 12px;">다 똑같은 기둥에 매장 이름이 금색 로고에 영어만달라서 찾기 헷갈림</li>
+                    </ul>
+
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        인터뷰 기록 (롯데백화점)
+                    </h4>
+                    <div class="accordion-container" style="margin-bottom: 40px;">
+                        <details class="interview-accordion">
+                            <summary>2-30대 내국인 여성</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오시나요?</strong><br>A. 처음 방문했다</p>
+                                <p><strong>Q. 길을 헤맨 경험이 있나요?</strong><br>A. 처음 들어온 게 본관인줄알앗는데 다시보니 에비뉴엘이라 조금 헤맸다.</p>
+                                <p><strong>Q. 실내에서 길을 찾을 때 어떤 방법으로 찾으시나요?</strong><br>A. 안내스크린을 사용한다.</p>
+                                <p><strong>Q. 불편한 점이 있으신가요?</strong><br>A. 불편한 점: 안내스크린에 뜨는 경로 기억하기</p>
+                            </div>
+                        </details>
+
+                        <details class="interview-accordion">
+                            <summary>초등학생 자녀와 함께 있는 중년 남성</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오시나요?</strong><br>A. 처음 방문했다</p>
+                                <p><strong>Q. 길을 헤맨 경험이 있나요?</strong><br>A. 처음이라 혼란스러웠다.</p>
+                                <p><strong>Q. 지도 앱은 어떤 걸 사용하시나요?</strong><br>A. 구글맵을 사용한다.</p>
+                                <p><strong>Q. 안내판을 이해하는 데 어려운 점이 있나요? 자주 사용하시나요?</strong><br>A. 표지판들은 이해하는 데 어렵지 않고 자주 사용한다</p>
+                                <p><strong>Q. 선호하는 표기법이 있나요?</strong><br>A. 표기는 화살표를 선호한다</p>
+                                <p><strong>Q. 안내스크린을 사용할 때 불편한 점이 있나요?</strong><br>A. 없다</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        관찰 기록 (신세계백화점)
+                    </h4>
+                    <ul style="margin-bottom: 40px; padding-left: 20px; list-style-type: disc;">
+                        <li style="margin-bottom: 12px;">안내스크린 생각보다 많이 이용함</li>
+                        <li style="margin-bottom: 12px;">에스컬레리터 버튼 누르면 경로뜸</li>
+                        <li style="margin-bottom: 12px;">글씨가 작음 (확대가 일정 이상 안됨)</li>
+                        <li style="margin-bottom: 12px;">검색 카테고리가 나뉘어져 있음 (브랜드/카페/레스토랑)</li>
+                        <li style="margin-bottom: 12px;">엘리베이터 앞에서 층별 안내도를 확인한다</li>
+                        <li style="margin-bottom: 12px;">에스컬레이터 도착하면 천장에 층별 표시가 달려있음</li>
+                        <li style="margin-bottom: 12px;">에스컬레이터 옆에 안내 스크린이 설치되어 있음</li>
+                        <li style="margin-bottom: 12px;">어떤 남자분이 에스컬레이터 앞에서 가게들을 확인하고 올라감</li>
+                        <li style="margin-bottom: 12px;">어떤 중년 남자가 에스컬레이터에서 올라오다가 잠시 내려서 이 층에 무엇이 있는지 슥 훑어보고 다시 올라감</li>
+                        <li style="margin-bottom: 12px;">어떤 중년 부부가 ‘이쪽인가?’ 하다가 다른 쪽으로 돌아감</li>
+                        <li style="margin-bottom: 12px;">의류 매장이 있어 다들 길을 본다기 보다는 매장 진열대를 보면서 걸음</li>
+                        <li style="margin-bottom: 12px;">40대여성 안내스크린 이용자: 브랜드 검색을 활용하다가 찾지 못하고 두리번거리다가 화면 그대로 돌려놓고 나감</li>
+                        <li style="margin-bottom: 12px;">중년 여성 ‘이게 화장실인가?’ 하고 들어감</li>
+                        <li style="margin-bottom: 12px;">손 화살표로 가리키면서 이동함 (목적지 확인)</li>
+                        <li style="margin-bottom: 12px;">에스컬레이터 타며 위에달린 층수표시 확인하면서 내려감/올라감</li>
+                        <li style="margin-bottom: 12px;">직접 걸어다니면서 확인하는 사함이 다수인 것 같고 일행이 있을 때에는 손가락으로 가리키며 이동함</li>
+                        <li style="margin-bottom: 12px;">아무 매장 직원한테 물어보고 안내를 받아서 가는 사람 확인됨</li>
+                        <li style="margin-bottom: 12px;">직접 돌아다니면서 찾는 사람이 많은 것 같음</li>
+                        <li style="margin-bottom: 12px;">어떤 남성 일본인 안내스크린을 사용 -> 일본어로 바꾸고 층별로 바꿔가며 위치를 확인함 -> 같이 온 일행한테 뭐라 얘기하면서 떠남</li>
+                        <li style="margin-bottom: 12px;">안내스크린 층별 안내도를 뚫어지게 쳐다보다가 나가심</li>
+                        <li style="margin-bottom: 12px;">다른사람도 주로 층별안내도를 확인하거나 브랜드 검색을 활용. 길 경로표시 기능이 있으나 사용하는 사람을 많이 못 봄</li>
+                        <li style="margin-bottom: 12px;">두리번두리번 거리면서 이 층 아니야? 하다가 아래층아니야? 하다가 안내스크린으로 와서 검색을 하는데 층별안내도를 보면서 이게 이거 아니야? 하는데 ‘여성클래식’은어디야 하면서 몇번 조작해보다가 떠남</li>
+                        <li style="margin-bottom: 12px;">화장실에 왔다가 지나쳤다가 벽에 달린 아이콘을 보고 여기다 하며 들어감</li>
+                        <li style="margin-bottom: 12px;">안내스크린 메인 화면이 약간 광고 포스터? 홍보 포스터? 이런 거라 그런진 몰라도 없을 땐 사람이 없고 사람이 한번 모이면 계속 왔던듯</li>
+                    </ul>
+
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        인터뷰 기록 (신세계백화점)
+                    </h4>
+                    <div class="accordion-container" style="margin-bottom: 40px;">
+                        <details class="interview-accordion">
+                            <summary>30대 여성</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오시나요?</strong><br>A. 자주 오진 않고 가끔 온다</p>
+                                <p><strong>Q. 길을 헤맨 경험이 있나요?</strong><br>A. 특정 브랜드를 찾고 있는데 모여있을 줄 알았는데 흩어져있거나, 2층에 있을 줄 알았는데 3층에 있다거나 할 때...</p>
+                                <p><strong>Q. 실내에서 길을 찾을 때 어떤 방법으로 찾으시나요?</strong><br>A. 안내스크린 사용한다</p>
+                                <p><strong>Q. 불편한 점이 있으신가요?</strong><br>A. 안내스크린이 많이 배치되어있지 않아서 불편함, 곳곳에 있었으면 좋겠는데 에스컬레이터 옆에만 있으니...</p>
+                                <p><strong>Q. 안내 스크린에서 가장 많이 사용하는 것은 무엇인가요?</strong><br>A. 브랜드 검색. 다른 검색은 잘 안 쓴다</p>
+                            </div>
+                        </details>
+
+                        <details class="interview-accordion">
+                            <summary>30대 남성</summary>
+                            <div class="accordion-content">
+                                <p><strong>Q. 자주 오시나요?</strong><br>A. 옷 사러 올 때 종종 오는 것 같다.</p>
+                                <p><strong>Q. 길을 헤맨 경험이 있나요?</strong><br>A. 없음.</p>
+                                <p><strong>Q. 실내에서 길을 찾을 때 어떤 방법으로 찾으시나요?</strong><br>A. 그냥 돌아다닌다. 여러 매장 돌아다니며 보는 거 자체가 목적이라 층수만 확인하고 돌아다닌다.</p>
+                                <p><strong>Q. 그럼 층수는 어떻게 확인하시나요?</strong><br>A. 층수는 일단 에스컬레이터를 탄 다음 올라가면서 확인한다.</p>
+                                <p><strong>Q. 불편한 점이 있으신가요?</strong><br>A. 딱히 없음.</p>
+                                <p><strong>Q. 안내 스크린 이용 경험이 있으신가요?</strong><br>A. 없다.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </template>
+
         <!-- Essay Template -->
         <template id="essay-template">
-            <div class="modal-intro" style="padding: 40px 60px;">
-                <h2 style="font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 32px; word-break: keep-all; line-height: 1.3;">복잡함은 죄가 없다</h2>
-                
-                <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">디자인을 공부하다 보면 항상 심플함이라는 강박에 빠지곤 한다. 하지만 《도널드 노먼의 UX 디자인 특강: 복잡한 세상의 디자인(Living with Complexity)》을 읽고 나면 이 명제에 의문이 생긴다. 도널드 노먼은 세상은 원래 복잡하고, 사람들은 사실 풍부한 기능을 원한다고 말한다. 진짜 문제는 복잡함 그 자체가 아니라, 설계자의 불친절로 인해 사용자가 느끼는 혼란에 있다는 것이다.</p>
+            <div class="modal-intro" style="padding: 40px 60px; display: flex; gap: 40px; align-items: flex-start;">
+                <div style="flex: 1;">
+                    <h2 style="font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 32px; word-break: keep-all; line-height: 1.3;">복잡함은 죄가 없다</h2>
+                    
+                    <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">디자인을 공부하다 보면 항상 심플함이라는 강박에 빠지곤 한다. 하지만 《도널드 노먼의 UX 디자인 특강: 복잡한 세상의 디자인(Living with Complexity)》을 읽고 나면 이 명제에 의문이 생긴다. 도널드 노먼은 세상은 원래 복잡하고, 사람들은 사실 풍부한 기능을 원한다고 말한다. 진짜 문제는 복잡함 그 자체가 아니라, 설계자의 불친절로 인해 사용자가 느끼는 혼란에 있다는 것이다.</p>
 
-                <h3 style="font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 16px; margin-top: 48px;">1. 사용자는 바보가 아니라, 길이 필요한 것뿐이다</h3>
-                <p style="margin-bottom: 16px; font-size: 1.1rem; line-height: 1.8;">책에서 가장 인상 깊었던 대목은 '복잡함은 길들일 수 있다'는 관점이다. 우리가 비행기 조종석을 보고 경악하는 이유는 그 수많은 버튼의 논리를 모르기 때문이다. 반면, 베테랑 조종사에게 그곳은 세상에서 가장 직관적인 공간이다.</p>
-                <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">이 차이는 어디서 올까? 바로 '개념 모델(Conceptual Model)'이다. 사용자가 제품을 보고 '아, 이건 이렇게 돌아가겠구나'라고 머릿속으로 그림을 그릴 수 있게 해준다면, 아무리 기능이 많아도 사용자는 그것을 복잡하다고 느끼지 않는다. 결국 디자이너의 역할은 기능을 덜어내는 것이 아니라, 그 기능들 사이에 보이지 않는 질서를 세워주는 일이다.</p>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 16px; margin-top: 48px;">1. 사용자는 바보가 아니라, 길이 필요한 것뿐이다</h3>
+                    <p style="margin-bottom: 16px; font-size: 1.1rem; line-height: 1.8;">책에서 가장 인상 깊었던 대목은 '복잡함은 길들일 수 있다'는 관점이다. 우리가 비행기 조종석을 보고 경악하는 이유는 그 수많은 버튼의 논리를 모르기 때문이다. 반면, 베테랑 조종사에게 그곳은 세상에서 가장 직관적인 공간이다.</p>
+                    <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">이 차이는 어디서 올까? 바로 '개념 모델(Conceptual Model)'이다. 사용자가 제품을 보고 '아, 이건 이렇게 돌아가겠구나'라고 머릿속으로 그림을 그릴 수 있게 해준다면, 아무리 기능이 많아도 사용자는 그것을 복잡하다고 느끼지 않는다. 결국 디자이너의 역할은 기능을 덜어내는 것이 아니라, 그 기능들 사이에 보이지 않는 질서를 세워주는 일이다.</p>
 
-                <h3 style="font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 16px; margin-top: 48px;">2. 타겟 사용자의 마음속 지도 읽기</h3>
-                <p style="margin-bottom: 16px; font-size: 1.1rem; line-height: 1.8;">디자이너로서 내가 주목한 타겟은 낯선 환경에 놓인 사용자다. 대형 쇼핑몰에서 길을 잃거나, 처음 깔아본 앱에서 결제 버튼을 못 찾아 헤매는 사람들 말이다. 도널드 노먼은 이런 상황에서 기표의 중요성을 강조한다.</p>
-                <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">어디로 가야 할지 알려주는 바닥의 컬러 라인, 다음 단계로 넘어가기 위해 눌러야 할 버튼의 그림자 같은 것들이다. 아주 사소해 보이지만, 이런 장치들이 모여 행위의 7단계를 매끄럽게 잇는다. 사용자가 '이제 뭘 해야 하지?'라고 고민하는 순간, 디자인은 이미 실패한 것이다.</p>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 16px; margin-top: 48px;">2. 타겟 사용자의 마음속 지도 읽기</h3>
+                    <p style="margin-bottom: 16px; font-size: 1.1rem; line-height: 1.8;">디자이너로서 내가 주목한 타겟은 낯선 환경에 놓인 사용자다. 대형 쇼핑몰에서 길을 잃거나, 처음 깔아본 앱에서 결제 버튼을 못 찾아 헤매는 사람들 말이다. 도널드 노먼은 이런 상황에서 기표의 중요성을 강조한다.</p>
+                    <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">어디로 가야 할지 알려주는 바닥의 컬러 라인, 다음 단계로 넘어가기 위해 눌러야 할 버튼의 그림자 같은 것들이다. 아주 사소해 보이지만, 이런 장치들이 모여 행위의 7단계를 매끄럽게 잇는다. 사용자가 '이제 뭘 해야 하지?'라고 고민하는 순간, 디자인은 이미 실패한 것이다.</p>
 
-                <h3 style="font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 16px; margin-top: 48px;">3. 결국 디자인은 배려의 기술이다</h3>
-                <p style="margin-bottom: 16px; font-size: 1.1rem; line-height: 1.8;">도널드 노먼의 글을 읽으며 반성하게 된 지점이 있다. 때때로 우리는 예쁜 디자인이나 개성을 보여주기 위해 사용자의 직관을 희생시킨다. 하지만 진정으로 좋은 디자인은 사용자를 똑똑하게 만드는 디자인이다.</p>
-                <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">복잡한 세상을 탓할 필요는 없다. 사용자가 그 복잡함 속에서도 길을 잃지 않고 목적지에 도달할 수 있도록, 친절한 기표를 적재적소에 놓아주는 것. 그것이 내가 앞으로 해나가야 할 디자인의 본질이 아닐까 싶다. 복잡함은 죄가 없다. 그걸 제대로 설명해주지 못한 불친절한 디자인이 문제일 뿐이다.</p>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 16px; margin-top: 48px;">3. 결국 디자인은 배려의 기술이다</h3>
+                    <p style="margin-bottom: 16px; font-size: 1.1rem; line-height: 1.8;">도널드 노먼의 글을 읽으며 반성하게 된 지점이 있다. 때때로 우리는 예쁜 디자인이나 개성을 보여주기 위해 사용자의 직관을 희생시킨다. 하지만 진정으로 좋은 디자인은 사용자를 똑똑하게 만드는 디자인이다.</p>
+                    <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">복잡한 세상을 탓할 필요는 없다. 사용자가 그 복잡함 속에서도 길을 잃지 않고 목적지에 도달할 수 있도록, 친절한 기표를 적재적소에 놓아주는 것. 그것이 내가 앞으로 해나가야 할 디자인의 본질이 아닐까 싶다. 복잡함은 죄가 없다. 그걸 제대로 설명해주지 못한 불친절한 디자인이 문제일 뿐이다.</p>
+                </div>
+                <div style="flex-shrink: 0; width: 160px; padding-top: 12px;">
+                    <img src="https://github.com/xamxam33/-/raw/main/image%205.png" alt="도널드 노먼의 UX 디자인 특강 책 표지" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                </div>
             </div>
         </template>
 
@@ -1474,6 +1822,27 @@
                 images: [],
                 isTemplate: true,
                 templateId: 'ux-research-template'
+            },
+            '[Week 03] 보건소 에스노그라피를 위한 답사': {
+                type: 'UX 리서치 에스노그라피',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'week03-template'
+            },
+            '[Week 03] 대형 쇼핑몰 에스노그라피 기록': {
+                type: 'UX 리서치 에스노그라피',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'week03-mall-template'
+            },
+            '[Week 03] 대형 백화점 에스노그라피 기록': {
+                type: 'UX 리서치 에스노그라피',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'week03-dept-store-template'
             },
             '내폼리폼': {
                 type: '웹 서비스 디자인',
