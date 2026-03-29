@@ -919,7 +919,7 @@
                 <a href="#profile">Profile</a>
                 <a href="#projects">Projects</a>
                 <a href="#ux-research">UX Research</a>
-                <a href="#essay">Essay</a>
+                <a href="#record">Record</a>
             </div>
         </div>
     </nav>
@@ -1129,18 +1129,33 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card" onclick="openModal('[Week 04] 용산아이파크몰 에스노그라피 기록')">
+                    <div class="project-info" style="padding: 24px 32px; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="color: #2563eb; display: flex; align-items: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            </div>
+                            <h3 style="font-size: 1.125rem; margin: 0;">[Week 04] 용산아이파크몰 에스노그라피 기록</h3>
+                        </div>
+                        <div class="project-arrow" style="margin-top: 0;">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Essay Section -->
-        <section id="essay" class="projects">
-            <h2 class="section-title">Essay</h2>
+        <!-- Record Section -->
+        <section id="record" class="projects">
+            <h2 class="section-title">Record</h2>
             
-            <div class="project-grid" style="grid-template-columns: 1fr;">
-                <div class="project-card" onclick="openModal('Essay')">
-                    <div class="project-info" style="padding: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+            <div class="project-grid" style="display: grid; grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 20px;">
+                <div class="project-card" onclick="openModal('[Week 03] 복잡함은 죄가 없다')" style="height: 100%;">
+                    <div class="project-info" style="padding: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 100%;">
                         <div style="flex: 1;">
-                            <h3 style="font-size: 1.5rem; margin-bottom: 4px;">복잡함은 죄가 없다</h3>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 4px;">[Week 03] 복잡함은 죄가 없다</h3>
                             <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px;">《도널드 노먼의 UX 디자인 특강: 복잡한 세상의 디자인》을 읽고</p>
                             <div class="project-arrow">
                                 자세히 보기 
@@ -1148,7 +1163,20 @@
                             </div>
                         </div>
                         <div style="flex-shrink: 0; margin-left: 32px;">
-                            <img src="https://github.com/xamxam33/-/raw/0932f113993fcb1101f4c740de68da0f01d660aa/image%205.png" alt="도널드 노먼의 UX 디자인 특강 책 표지" style="width: 120px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <img src="https://github.com/xamxam33/-/raw/0932f113993fcb1101f4c740de68da0f01d660aa/image%205.png" alt="도널드 노먼의 UX 디자인 특강 책 표지" style="width: 80px; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('[Week 04] Google Analytics 구축 과정 기록')" style="height: 100%;">
+                    <div class="project-info" style="padding: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 100%;">
+                        <div style="flex: 1;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 4px;">[Week 04] Google Analytics 구축 과정 기록</h3>
+                            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px;">해당 웹사이트를 GA에 연동하여 트래픽 데이터를 받다</p>
+                            <div class="project-arrow">
+                                자세히 보기 
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1745,7 +1773,7 @@
         <template id="essay-template">
             <div class="modal-intro" style="padding: 40px 60px; display: flex; gap: 40px; align-items: flex-start;">
                 <div style="flex: 1;">
-                    <h2 style="font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 32px; word-break: keep-all; line-height: 1.3;">복잡함은 죄가 없다</h2>
+                    <h2 style="font-size: 2.5rem; font-weight: 800; color: #111; margin-bottom: 32px; word-break: keep-all; line-height: 1.3;">[Week 03] 복잡함은 죄가 없다</h2>
                     
                     <p style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.8;">디자인을 공부하다 보면 항상 심플함이라는 강박에 빠지곤 한다. 하지만 《도널드 노먼의 UX 디자인 특강: 복잡한 세상의 디자인(Living with Complexity)》을 읽고 나면 이 명제에 의문이 생긴다. 도널드 노먼은 세상은 원래 복잡하고, 사람들은 사실 풍부한 기능을 원한다고 말한다. 진짜 문제는 복잡함 그 자체가 아니라, 설계자의 불친절로 인해 사용자가 느끼는 혼란에 있다는 것이다.</p>
 
@@ -1763,6 +1791,71 @@
                 </div>
                 <div style="flex-shrink: 0; width: 160px; padding-top: 12px;">
                     <img src="https://github.com/xamxam33/-/raw/0932f113993fcb1101f4c740de68da0f01d660aa/image%205.png" alt="도널드 노먼의 UX 디자인 특강 책 표지" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+        </template>
+
+        <!-- Week 04 Ipark Template -->
+        <template id="week04-ipark-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155; text-align: center;">
+                    <p>내용이 곧 업데이트될 예정입니다.</p>
+                </div>
+            </div>
+        </template>
+
+        <!-- GA Record Template -->
+        <template id="ga-record-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="margin-bottom: 60px; background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 24px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 16px; color: #2563eb; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        목표
+                    </h4>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #334155; margin: 0;">
+                        GA에 해당 사이트를 연결해 서버 방문자 수 등의 트래픽 데이터를 받고, 이를 시각화하여 웹사이트에 싣는다.
+                    </p>
+                </div>
+                
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155; margin-bottom: 60px;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        과정
+                    </h4>
+                    <ol style="margin-bottom: 0; padding-left: 20px;">
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">계정 및 속성 생성:</strong> Google Analytics에서 관리 계정을 만들고, 포트폴리오 사이트를 관리할 속성을 개설함.</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">데이터 스트림 설정:</strong> 데이터를 수집할 통로인 웹 스트림을 생성하고, 내 Vercel 배포 주소를 연결함.</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">측정 ID 발급 및 태그 복사:</strong> 해당 스트림 전용 측정 ID와 웹사이트에 삽입할 Google 태그 코드를 획득함.</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">프론트엔드 코드 삽입:</strong> Google AI Studio를 통해 index.html 파일의 &lt;head&gt; 태그 바로 아래에 복사한 태그 코드를 삽입함.</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #0f172a;">GitHub 커밋 및 Vercel 배포:</strong> 수정된 코드를 저장소에 반영하여 실제 웹사이트에 적용함.</li>
+                    </ol>
+                </div>
+
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155; margin-bottom: 60px;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        결과
+                    </h4>
+                    <p style="margin-bottom: 24px;">
+                        <strong style="color: #0f172a;">데이터 수집 확인 (실시간 보고서):</strong> GA4의 실시간 보고서 메뉴를 통해 실제 접속자 수가 카운팅되는 것을 확인하며 연결을 검증함.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <img src="https://github.com/xamxam33/-/raw/31725fa173f542272782e74dee45b27823df1c6a/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_29-3-2026_201211_analytics.google.com.jpeg" alt="GA 실시간 보고서 1" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <img src="https://github.com/xamxam33/-/raw/31725fa173f542272782e74dee45b27823df1c6a/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_29-3-2026_201241_analytics.google.com.jpeg" alt="GA 실시간 보고서 2" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        한계
+                    </h4>
+                    <p style="margin-bottom: 16px;">
+                        서버 데이터를 GA에 성공적으로 연결하였으나, 이를 웹사이트에 시각화하는 것은 불가능하였음. 그 이유는 우선 API 키 노출 문제와 관련된 보안 문제가 있었음.
+                    </p>
+                    <p>
+                        또한 GA 데이터를 시각화하려면 별도의 Node.js 등으로 구축된 별도의 백엔드 서버가 필요한데 이 백엔드 서버에서 구글 API와 통신하여 받아온 데이터를 프론트엔드(Google Ai Studio)로 전달해 그래프로 그려야 함. 따라서 웹사이트에 시각화를 하는 데 어려움을 겪었으며 GA에서 실시간 보고서를 받는 수준으로 마무리하였음.
+                    </p>
                 </div>
             </div>
         </template>
@@ -1818,12 +1911,19 @@
         const modalBody = document.getElementById('modalBody');
 
         const projectData = {
-            'Essay': {
+            '[Week 03] 복잡함은 죄가 없다': {
                 type: '에세이',
                 intro: '',
                 images: [],
                 isTemplate: true,
                 templateId: 'essay-template'
+            },
+            '[Week 04] Google Analytics 구축 과정 기록': {
+                type: '기록',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'ga-record-template'
             },
             'UX Research': {
                 type: 'UX 리서치 에스노그라피',
@@ -1852,6 +1952,13 @@
                 images: [],
                 isTemplate: true,
                 templateId: 'week03-dept-store-template'
+            },
+            '[Week 04] 용산아이파크몰 에스노그라피 기록': {
+                type: 'UX 리서치 에스노그라피',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'week04-ipark-template'
             },
             '내폼리폼': {
                 type: '웹 서비스 디자인',
