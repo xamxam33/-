@@ -1167,6 +1167,19 @@
             <h2 class="section-title">Record</h2>
             
             <div class="project-grid" style="display: grid; grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 20px;">
+                <div class="project-card" onclick="openModal('[Week 03] 좋은 디자인 나쁜 디자인 분석')" style="height: 100%;">
+                    <div class="project-info" style="padding: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 100%;">
+                        <div style="flex: 1;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 4px;">[Week 03] 좋은 디자인 나쁜 디자인 분석</h3>
+                            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px;">길찾기 경험과 관련한 좋고 나쁜 디자인 찾기</p>
+                            <div class="project-arrow">
+                                자세히 보기 
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card" onclick="openModal('[Week 03] 복잡함은 죄가 없다')" style="height: 100%;">
                     <div class="project-info" style="padding: 40px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 100%;">
                         <div style="flex: 1;">
@@ -1983,7 +1996,28 @@
                         아이디어 브레인스토밍 - 개인 과제 아이디어 50개
                     </h4>
                     <p style="margin-bottom: 24px;">20개씩은 1차로 개인이 가져오고 (핑크색 포스트잇), 2차로 다같이 얘기하며 브레인스토밍을 진행하였음(하늘색 포스트잇).</p>
-                    <img src="https://github.com/xamxam33/-/raw/48096e98bfbd815c869ca0473e7b9682615ec6f1/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202026-04-07%20024013.png" alt="아이디어 브레인스토밍 포스트잇" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://github.com/xamxam33/-/raw/48096e98bfbd815c869ca0473e7b9682615ec6f1/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202026-04-07%20024013.png" alt="아이디어 브레인스토밍 포스트잇" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 40px;">
+
+                    <h4 style="font-size: 1.3rem; margin-bottom: 16px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        Gut Check
+                    </h4>
+                    <p style="margin-bottom: 24px;">아이디어 클러스터링, 도트투표, 2차 평가를 진행하여 추린 핵심 아이디어에 대해 팀원 각자 Gut Check를 진행함.</p>
+                    <img src="https://github.com/xamxam33/-/raw/3fdbdaa21ab414d0fbf1267f911da4022c59c04c/%EA%B2%83%EC%B2%B5.png" alt="Gut Check" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </template>
+
+        <!-- Week 03 Design Analysis Template -->
+        <template id="week03-design-analysis-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="display: flex; flex-direction: column; gap: 24px; align-items: center;">
+                    <img src="https://github.com/xamxam33/-/raw/bb4a6c4af841f8d4881ccd2a3a4a3cd6ad54858b/1.png" alt="디자인 분석 1" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://github.com/xamxam33/-/raw/bb4a6c4af841f8d4881ccd2a3a4a3cd6ad54858b/2.png" alt="디자인 분석 2" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://github.com/xamxam33/-/raw/bb4a6c4af841f8d4881ccd2a3a4a3cd6ad54858b/3.png" alt="디자인 분석 3" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://github.com/xamxam33/-/raw/bb4a6c4af841f8d4881ccd2a3a4a3cd6ad54858b/4.png" alt="디자인 분석 4" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://github.com/xamxam33/-/raw/bb4a6c4af841f8d4881ccd2a3a4a3cd6ad54858b/5.png" alt="디자인 분석 5" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://github.com/xamxam33/-/raw/bb4a6c4af841f8d4881ccd2a3a4a3cd6ad54858b/6.png" alt="디자인 분석 6" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </template>
@@ -2095,6 +2129,13 @@
         const modalBody = document.getElementById('modalBody');
 
         const projectData = {
+            '[Week 03] 좋은 디자인 나쁜 디자인 분석': {
+                type: 'Record',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'week03-design-analysis-template'
+            },
             '[Week 03] 복잡함은 죄가 없다': {
                 type: '에세이',
                 intro: '',
