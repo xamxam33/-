@@ -1160,6 +1160,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card" onclick="openModal('[Week 07] 콘셉 테스트 진행 기록')">
+                    <div class="project-info" style="padding: 24px 32px; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="color: #2563eb; display: flex; align-items: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <h3 style="font-size: 1.125rem; margin: 0;">[Week 07] 콘셉 테스트 진행 기록</h3>
+                        </div>
+                        <div class="project-arrow" style="margin-top: 0;">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2101,6 +2116,76 @@
             </div>
         </template>
 
+        <!-- Week 07 Concept Test Template -->
+        <template id="week07-concept-test-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="margin-bottom: 40px; background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 24px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #334155; margin: 0;">
+                        기본적인 서비스 설명과 Lo-fi 와이어프레임을 사용자에게 보여주고, 몇 가지 질문을 통해 콘셉테스트를 진행함.
+                    </p>
+                </div>
+
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                    <h4 style="font-size: 1.3rem; margin-bottom: 24px; color: #2563eb; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        50대 여성 콘셉트 테스트 전문
+                    </h4>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 32px;">
+                        <div style="background-color: #f1f5f9; padding: 24px; border-radius: 8px;">
+                            <p style="font-weight: 700; color: #0f172a; margin-bottom: 12px; display: flex; gap: 8px;">
+                                <span style="color: #2563eb;">Q1.</span> 콘셉트 첫인상은 어떠셨나요?
+                            </p>
+                            <p style="margin: 0; display: flex; gap: 8px;">
+                                <span style="color: #64748b; font-weight: 700;">A1.</span>
+                                <span>매우 좋았습니다. 오프라인 쇼핑몰별로 비교할 수 있는 기능은 생각도 못 해봐서 신기해요.</span>
+                            </p>
+                        </div>
+
+                        <div style="background-color: #f1f5f9; padding: 24px; border-radius: 8px;">
+                            <p style="font-weight: 700; color: #0f172a; margin-bottom: 12px; display: flex; gap: 8px;">
+                                <span style="color: #2563eb;">Q2.</span> 실제로 서비스가 나온다면 사용 의향이 있으신가요?
+                            </p>
+                            <p style="margin: 0; display: flex; gap: 8px;">
+                                <span style="color: #64748b; font-weight: 700;">A2.</span>
+                                <span>네. 사용해보고 싶습니다. 앱을 통해서 사전에 정보를 찿아보면서 계획적이고 편리한 쇼핑을 할 수 있을 것 같아서 마음에 들어요.</span>
+                            </p>
+                        </div>
+
+                        <div style="background-color: #f1f5f9; padding: 24px; border-radius: 8px;">
+                            <p style="font-weight: 700; color: #0f172a; margin-bottom: 12px; display: flex; gap: 8px;">
+                                <span style="color: #2563eb;">Q3.</span> 현재 할인 정보를 얻거나 오프라인 가격을 비교하기 위한 문제를 어떤 식으로 해결하고 계신가요?
+                            </p>
+                            <p style="margin: 0; display: flex; gap: 8px;">
+                                <span style="color: #64748b; font-weight: 700;">A3.</span>
+                                <span>집으로 오는 우편 전단지로 할인 정보를 확인하고, 오프라인 쇼핑몰의 가격 비교는 딱히 하지 않습니다.</span>
+                            </p>
+                        </div>
+
+                        <div style="background-color: #f1f5f9; padding: 24px; border-radius: 8px;">
+                            <p style="font-weight: 700; color: #0f172a; margin-bottom: 12px; display: flex; gap: 8px;">
+                                <span style="color: #2563eb;">Q4.</span> 이 서비스의 핵심 매력 포인트가 무엇이라고 생각하시나요?
+                            </p>
+                            <p style="margin: 0; display: flex; gap: 8px;">
+                                <span style="color: #64748b; font-weight: 700;">A4.</span>
+                                <span>사전에 제품을 검색하면 쇼핑몰별로 가격 비교가 되니까 좋은 것 같습니다.</span>
+                            </p>
+                        </div>
+
+                        <div style="background-color: #f1f5f9; padding: 24px; border-radius: 8px;">
+                            <p style="font-weight: 700; color: #0f172a; margin-bottom: 12px; display: flex; gap: 8px;">
+                                <span style="color: #2563eb;">Q5.</span> 불편한 사항이나 추가 요구 사항이 있으신가요?
+                            </p>
+                            <p style="margin: 0; display: flex; gap: 8px;">
+                                <span style="color: #64748b; font-weight: 700;">A5.</span>
+                                <span>검색할 때 브랜드를 검색하는 기능이 포함되었으면 좋겠어요. 엄마들은 특정 제품 보다는 브랜드 매장에 일단 가서 어떤 제품을 살지 구경하기도 하는데, 브랜드를 검색하면 이 브랜드가 어느 쇼핑몰마다 입점해있는지도 알려줬으면 좋겠습니다.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
         <!-- Week 06 Lo-fi Wireframe Template -->
         <template id="week06-lofi-wireframe-template">
             <div class="ux-research" style="padding: 80px 40px 60px;">
@@ -2188,6 +2273,13 @@
         const modalBody = document.getElementById('modalBody');
 
         const projectData = {
+            '[Week 07] 콘셉 테스트 진행 기록': {
+                type: 'UX 리서치',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'week07-concept-test-template'
+            },
             '[Week 06] Lo-fi Wireframe': {
                 type: 'UI Record',
                 intro: '',
