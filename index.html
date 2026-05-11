@@ -1219,6 +1219,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card" onclick="openModal('[Week 10] UI 화면 디자인 시안 제작 2차')">
+                    <div class="project-info" style="padding: 24px 32px; flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="color: #2563eb; display: flex; align-items: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                            </div>
+                            <h3 style="font-size: 1.125rem; margin: 0;">[Week 10] UI 화면 디자인 시안 제작 2차</h3>
+                        </div>
+                        <div class="project-arrow" style="margin-top: 0;">
+                            자세히 보기 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2513,6 +2528,23 @@
             </div>
         </template>
 
+        <!-- Week 10 UI Design Template -->
+        <template id="week10-ui-design-template">
+            <div class="ux-research" style="padding: 80px 40px 60px;">
+                <div style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                    <div style="margin-bottom: 40px; background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 24px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                        <p style="margin: 0;">
+                            팀 회의에서 진행한 1차 와이어프레임 수정 작업과 사용성 테스트 후 진행한 2차 와이어프레임 수정 작업을 반영하여 디자인 시안을 제작하였음. 팀에서 주요 화면 3가지를 지정해 3개의 버전으로 디자인 시안 작업 진행함. (홈 화면 / 채팅 화면 / 렌즈 촬영 화면)
+                        </p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="https://github.com/xamxam33/-/raw/26f10c57163a81c6ced48cad225b943cd3086f03/10wnck.png" alt="Week 10 UI 디자인 시안 2차" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </template>
+
         <!-- Week 06 Lo-fi Wireframe Template -->
         <template id="week06-lofi-wireframe-template">
             <div class="ux-research" style="padding: 80px 40px 60px;">
@@ -2600,6 +2632,13 @@
         const modalBody = document.getElementById('modalBody');
 
         const projectData = {
+            '[Week 10] UI 화면 디자인 시안 제작 2차': {
+                type: '디자인 시안',
+                intro: '',
+                images: [],
+                isTemplate: true,
+                templateId: 'week10-ui-design-template'
+            },
             '[Week 09] UI 화면 디자인 시안 제작': {
                 type: '디자인 시안',
                 intro: '',
